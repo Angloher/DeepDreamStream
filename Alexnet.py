@@ -40,12 +40,6 @@ class AlexNet(nn.Module):
             nn.ReLU(inplace=True),
             nn.Linear(4096, num_classes),
         )
-
-    def pick_new_output_layer(self, new_out_layer):
-        j=new_out_layer
-        for i in range(new_out_layer,len(self.classifier)):
-            del self.classifier[new_out_layer]
-
         
 
     def forward(self, x):
